@@ -100,3 +100,8 @@ def ask_claude(user_message: str) -> str:
 @app.get("/")
 def root():
     return {"status": "running", "character": CHARACTER_NAME}
+
+@app.head("/health")
+@app.get("/health")
+def health():
+    return {"status": "ok"}
